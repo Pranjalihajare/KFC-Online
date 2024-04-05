@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script type="text/javascript" src="../src/scripts/kfc.js">
+       
+    </script>
+</head>
+<body class="container-fluid">
+    <header>
+        <img src="../public/image/kfctop.jpg" width="100%" height="300">
+    </header>
+    <section>
+        <div class="accordion" id="kfc">
+
+            <!-- Customre details -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <button data-bs-target="#customer" data-bs-toggle="collapse" class="btn btn-danger w-100">Customer Details</button>
+                </div>
+                <div class="accordion-collapse collapse show" id="customer" data-bs-parent="#kfc">
+                    <div class="accordion-body bg-danger text-white p-2 mt-1">
+                        <dl class="w-50">
+                            <dt>Customer Name</dt>
+                            <dd><input type="text" class="form-control" id="txtName"></dd>
+                            <dt>Moblie</dt>
+                            <dd><input type="text" class="form-control" id="txtMoblie"></dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <!-- Meal Deatils -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <button data-bs-target="#meal" data-bs-toggle="collapse" class="btn btn-danger w-100">Select Your Meal</button>
+                </div>
+                <div class="accordion-collapse collapse " id="meal" data-bs-parent="#kfc">
+                    <div class="accordion-body " >
+                        <div class="row">
+                            <div class="col text-center">
+                                <div class="h3">OMG Burger</div>
+                                <img src="../public/image/burger.jpg" >
+                                <div class="h3">
+                                    <input type="radio" class="form-check-input" id="optBurger" value="OMG Burger" name="Meal"> <label class="form-check-label"> &#8377; 120/-</label> 
+                                </div>
+
+                            </div>
+                            <div class="col text-center">
+                                <div class="h3">OMG Roller</div>
+                                <img src="../public/image/roller.jpg" >
+                                <div class="h3">
+                                    <input type="radio" class="form-check-input" id="optRoller" value="OMG Roller" name="Meal" > <label class="form-check-label">&#8377; 100/-</label> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AdoN Details -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <button data-bs-target="#adon" data-bs-toggle="collapse" class="btn btn-danger w-100">Select AD-ON's</button>
+                </div>
+                <div class="accordion-collapse collapse " id="adon" data-bs-parent="#kfc">
+                    <div class="accordion-body">
+                        <div class="row">
+                            <div class="col text-center">
+                                <div class="h3">Lava Cake</div>
+                                <img src="../public/image/cake.jpg" width="400" height="300">
+                                <div class="h3">
+                                    <input type="checkbox" class="form-check-input" id="optLava" value="Lava Cake"> <label class="form-check-label">  &#8377; 60/-</label>
+                                </div>
+                            </div>
+                            <div class="col text-center">
+                                <div class="h3">Pepsi</div>
+                                <img src="../public/image/pepsi.jpg" width="400" height="300">
+                                <div class="h3">
+                                    <input type="checkbox" class="form-check-input" id="optPepsi" value="Pepsi"> <label class="form-check-label">  &#8377; 40/-</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button onclick="OrderClick()" class="btn btn-danger w-100" data-bs-target="#summary" data-bs-toggle="modal" >Place Order</button>
+        <div class="modal fade" id="summary">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="text-danger">Your Bill Summary</h2>
+                        <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col">
+                                <dl>
+                                    <dt>Customer Name</dt>
+                                    <dd id="lblName"></dd>
+                                    <dt>Moblie</dt>
+                                    <dd id="lblMoblie"></dd>
+                                    <dt>Meal</dt>
+                                    <dd id="lblMeal"></dd>
+                                    <dt>AdON</dt>
+                                    <dd id="lblAdon"></dd>
+                                    <dt>Total</dt>
+                                    <dd id="lblTotal"></dd>
+                                </dl>
+                            </div>
+                            <div class="col">
+                                <img id="imgMeal" width="100%">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
